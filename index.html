@@ -450,64 +450,96 @@ footer p{font-size:.78rem;color:var(--muted)}
  
     <!-- Brevo form — restyled -->
     <style>
-      /* Reset Brevo defaults */
-      .sib-form { background: transparent !important; text-align: left !important; padding: 0 !important; }
-      #sib-form-container { padding: 0 !important; }
-      #sib-container {
-        max-width: 100% !important;
+      /* ── Brevo form full override ── */
+      .sib-form,
+      .sib-form-container,
+      #sib-form-container,
+      #sib-container,
+      #sib-container.sib-container--large,
+      #sib-container.sib-container--vertical {
         background: transparent !important;
         border: none !important;
         border-radius: 0 !important;
-        text-align: left !important;
+        box-shadow: none !important;
         padding: 0 !important;
+        max-width: 100% !important;
+        text-align: left !important;
       }
-      #sib-container .sib-form-block { display: none !important; } /* hide Brevo title/subtitle */
-      #sib-container input.input {
+      /* Hide Brevo's own title/subtitle blocks */
+      #sib-container .sib-form-block:not(.sib-input):not(.sib-form-block__button) {
+        display: none !important;
+      }
+      /* All inputs */
+      #sib-container input,
+      #sib-container input.input,
+      .sib-form input,
+      .sib-form input.input {
         background: rgba(255,255,255,0.04) !important;
-        border: 1px solid var(--border) !important;
+        border: 1px solid #1e3a5f !important;
         border-radius: 4px !important;
         padding: 12px 14px !important;
-        color: var(--white) !important;
+        color: #f0f4ff !important;
         font-family: 'Plus Jakarta Sans', sans-serif !important;
         font-size: 0.9rem !important;
         width: 100% !important;
         outline: none !important;
-        transition: border-color 0.2s !important;
         box-shadow: none !important;
+        transition: border-color 0.2s !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
       }
+      #sib-container input:focus,
       #sib-container input.input:focus {
-        border-color: var(--cyan) !important;
+        border-color: #00e5c8 !important;
+        box-shadow: none !important;
+        outline: none !important;
       }
-      #sib-container input.input::placeholder {
+      #sib-container input::placeholder,
+      .sib-form input::placeholder {
         color: rgba(240,244,255,0.25) !important;
-        font-family: 'Plus Jakarta Sans', sans-serif !important;
       }
-      .form__entry { margin-bottom: 12px !important; }
-      .entry__field { position: relative !important; }
-      .entry__error { display: block !important; font-size: 0.72rem !important; margin-top: 4px !important; padding: 4px 8px !important; }
-      /* Two col layout for first/last name */
+      /* Entry wrappers */
+      .form__entry,
+      .sib-input,
+      .entry__field { 
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 12px !important;
+      }
+      .form__label-row { margin: 0 !important; }
+      /* Error labels */
+      .entry__error {
+        font-size: 0.72rem !important;
+        margin-top: 4px !important;
+        padding: 4px 8px !important;
+        border-radius: 4px !important;
+      }
+      /* Name row two columns */
       .brevo-name-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 12px;
       }
-      /* Labels */
+      /* Our custom labels */
       .brevo-label {
         display: block;
         font-size: 0.72rem;
         font-family: 'Plus Jakarta Sans', sans-serif;
         font-weight: 700;
         letter-spacing: 0.08em;
-        color: var(--muted);
+        color: #64748b;
         text-transform: uppercase;
         margin-bottom: 6px;
       }
       /* Submit button */
-      .sib-form-block__button {
+      .sib-form-block__button,
+      button.sib-form-block__button {
+        display: block !important;
         width: 100% !important;
         padding: 15px !important;
-        background: var(--cyan) !important;
-        color: var(--navy) !important;
+        background: #00e5c8 !important;
+        color: #060a10 !important;
         border: none !important;
         border-radius: 4px !important;
         font-family: 'Plus Jakarta Sans', sans-serif !important;
@@ -519,32 +551,32 @@ footer p{font-size:.78rem;color:var(--muted)}
         cursor: pointer !important;
         transition: all 0.2s !important;
         margin-top: 8px !important;
+        box-shadow: none !important;
       }
       .sib-form-block__button:hover {
-        background: var(--white) !important;
+        background: #f0f4ff !important;
         transform: translateY(-1px) !important;
       }
-      /* Success / error messages */
-      #success-message {
+      /* Success / error panels */
+      #success-message.sib-form-message-panel {
         background: rgba(34,197,94,0.1) !important;
-        border-color: var(--green) !important;
+        border: 1px solid #22c55e !important;
         border-radius: 6px !important;
         color: #4ade80 !important;
-        font-family: 'Plus Jakarta Sans', sans-serif !important;
         max-width: 100% !important;
       }
-      #error-message {
+      #error-message.sib-form-message-panel {
         background: rgba(239,68,68,0.1) !important;
-        border-color: var(--red) !important;
+        border: 1px solid #ef4444 !important;
         border-radius: 6px !important;
         color: #f87171 !important;
-        font-family: 'Plus Jakarta Sans', sans-serif !important;
         max-width: 100% !important;
       }
-      /* Hide Brevo loader icon */
+      /* Honeypot + loader */
+      .input--hidden { display: none !important; visibility: hidden !important; position: absolute !important; left: -9999px !important; }
       .sib-hide-loader-icon { display: none !important; }
-      /* Divider before button */
-      .brevo-divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+      /* Divider */
+      .brevo-divider { border: none; border-top: 1px solid #1e3a5f; margin: 20px 0; }
     </style>
  
  
