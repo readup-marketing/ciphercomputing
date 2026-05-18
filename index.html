@@ -235,7 +235,63 @@ footer p{font-size:.78rem;color:var(--muted)}
   .year-cards-big{grid-template-columns:1fr}
 }
 </style>
-  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<style>
+/* Nuclear override of all Brevo visual styles */
+.sib-form,.sib-form *{font-family:'Plus Jakarta Sans',sans-serif!important;box-sizing:border-box!important}
+.sib-form,.sib-form-container,#sib-form-container,#sib-container,
+.sib-container--large,.sib-container--vertical{
+  background:transparent!important;border:none!important;border-radius:0!important;
+  box-shadow:none!important;padding:0!important;max-width:100%!important;
+  text-align:left!important;margin:0!important}
+/* Hide Brevo title/subtitle/paragraph blocks */
+.sib-form-block:not(.sib-input):not(.sib-form-block__button){display:none!important}
+/* All inputs */
+.sib-form input,.sib-form input.input,
+#sib-container input,#sib-container input.input{
+  display:block!important;width:100%!important;
+  background:rgba(255,255,255,0.04)!important;
+  border:1px solid #1e3a5f!important;border-radius:4px!important;
+  padding:12px 14px!important;color:#f0f4ff!important;
+  font-size:0.9rem!important;font-weight:400!important;
+  outline:none!important;box-shadow:none!important;
+  -webkit-appearance:none!important;appearance:none!important;
+  transition:border-color 0.2s!important;
+  margin:0!important}
+.sib-form input:focus,#sib-container input:focus,
+.sib-form input.input:focus,#sib-container input.input:focus{
+  border-color:#00e5c8!important;box-shadow:none!important;outline:none!important}
+.sib-form input::placeholder,#sib-container input::placeholder{
+  color:rgba(240,244,255,0.25)!important}
+/* Wrappers */
+.form__entry,.entry_block,.form__label-row,.entry__field,
+.sib-input,.sib-input.sib-form-block{
+  background:transparent!important;border:none!important;
+  padding:0!important;margin-bottom:12px!important;box-shadow:none!important}
+/* Submit button */
+.sib-form-block__button,button.sib-form-block__button{
+  display:block!important;width:100%!important;
+  padding:15px!important;background:#00e5c8!important;
+  color:#060a10!important;border:none!important;border-radius:4px!important;
+  font-size:0.9rem!important;font-weight:800!important;
+  letter-spacing:0.06em!important;text-align:center!important;
+  text-transform:uppercase!important;cursor:pointer!important;
+  transition:all 0.2s!important;margin-top:8px!important;box-shadow:none!important}
+.sib-form-block__button:hover{background:#f0f4ff!important;transform:translateY(-1px)!important}
+/* Messages */
+#success-message,#error-message{max-width:100%!important;border-radius:6px!important}
+#success-message{background:rgba(34,197,94,0.1)!important;border:1px solid #22c55e!important;color:#4ade80!important}
+#error-message{background:rgba(239,68,68,0.1)!important;border:1px solid #ef4444!important;color:#f87171!important}
+/* Honeypot and loader */
+.input--hidden{display:none!important;position:absolute!important;left:-9999px!important}
+.sib-hide-loader-icon{display:none!important}
+/* Error labels */
+.entry__error,.entry__error--primary{
+  font-size:0.72rem!important;margin-top:4px!important;
+  padding:4px 8px!important;border-radius:4px!important;
+  background:rgba(239,68,68,0.1)!important;
+  border-color:#ef4444!important;color:#f87171!important}
+</style>
 </head>
 <body>
  
