@@ -1,0 +1,153 @@
+Cipher thankyou · HTML
+Copy
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're in — Cipher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#060a10;--navy2:#0c1220;--cyan:#00e5c8;--cyan2:#00b8a0;
+    --white:#f0f4ff;--muted:#64748b;--border:#1e3a5f;
+    --green:#22c55e;--orange:#f97316;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--navy);color:var(--white);
+    font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;
+    min-height:100vh;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    padding:40px 20px;
+  }
+  body::before{
+    content:'';position:fixed;inset:0;
+    background-image:
+      linear-gradient(rgba(0,229,200,.04)1px,transparent 1px),
+      linear-gradient(90deg,rgba(0,229,200,.04)1px,transparent 1px);
+    background-size:48px 48px;pointer-events:none;z-index:0;
+  }
+  .card{
+    position:relative;z-index:1;
+    background:var(--navy2);border:1px solid var(--border);
+    border-radius:12px;padding:56px 48px;
+    max-width:560px;width:100%;text-align:center;
+    box-shadow:0 24px 80px rgba(0,0,0,.4);
+  }
+  .tick{
+    width:72px;height:72px;border-radius:50%;
+    background:rgba(34,197,94,.15);border:1px solid var(--green);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 28px;font-size:1.8rem;
+  }
+  .logo{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;
+    font-size:.85rem;letter-spacing:.08em;color:var(--muted);
+    margin-bottom:32px;text-decoration:none;
+  }
+  .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--cyan)}
+  h1{
+    font-family:'Plus Jakarta Sans',sans-serif;font-size:2.2rem;
+    font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;
+  }
+  h1 em{font-style:normal;color:var(--cyan)}
+  .sub{font-size:1rem;color:rgba(240,244,255,.6);line-height:1.75;margin-bottom:32px}
+  .steps{
+    background:var(--navy);border:1px solid var(--border);
+    border-radius:8px;padding:24px;margin-bottom:32px;text-align:left;
+  }
+  .steps-label{
+    font-family:'Plus Jakarta Sans',sans-serif;font-size:.65rem;
+    font-weight:700;letter-spacing:.2em;color:var(--cyan);
+    text-transform:uppercase;margin-bottom:16px;
+  }
+  .step{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+  .step:last-child{margin-bottom:0}
+  .step-n{
+    width:24px;height:24px;border-radius:50%;background:var(--cyan);
+    color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:.75rem;font-weight:800;display:flex;align-items:center;
+    justify-content:center;flex-shrink:0;margin-top:1px;
+  }
+  .step-t strong{display:block;font-size:.88rem;font-weight:600;color:var(--white);margin-bottom:2px}
+  .step-t span{font-size:.82rem;color:var(--muted);line-height:1.5}
+  .orange-note{
+    background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2);
+    border-radius:8px;padding:14px 18px;margin-bottom:28px;
+    font-size:.85rem;color:rgba(249,115,22,.9);line-height:1.6;
+  }
+  .back-link{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;
+    font-weight:600;color:var(--muted);text-decoration:none;
+    border-bottom:1px solid var(--border);padding-bottom:1px;
+    transition:color .2s;
+  }
+  .back-link:hover{color:var(--white)}
+  .cipher-mark{
+    margin-top:40px;font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:.72rem;font-weight:700;letter-spacing:.08em;color:var(--muted);
+  }
+</style>
+</head>
+<body>
+ 
+<div class="card">
+ 
+  <a href="/" class="logo"><span class="logo-dot"></span>CIPHER</a>
+ 
+  <div class="tick">✓</div>
+ 
+  <h1>You're in.<br><em>Check your inbox.</em></h1>
+ 
+  <p class="sub">
+    Your welcome email is on its way with a link to download the full Year 4 AI Literacy unit — six lessons, all resources, everything included.
+  </p>
+ 
+  <div class="steps">
+    <p class="steps-label">What happens next</p>
+ 
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-t">
+        <strong>Check your email</strong>
+        <span>Your welcome email should arrive within a few minutes. Check your spam folder if you don't see it.</span>
+      </div>
+    </div>
+ 
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-t">
+        <strong>Download your unit</strong>
+        <span>Six lesson slide decks, all printable resources, activity sheets and assessment rubrics — all in one place.</span>
+      </div>
+    </div>
+ 
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-t">
+        <strong>Your school code is coming</strong>
+        <span>We're setting up your personal Cipher Chat code and will send it across shortly in a separate email.</span>
+      </div>
+    </div>
+ 
+  </div>
+ 
+  <div class="orange-note">
+    ⭐ Full schemes of work for all year groups launching Summer 2026 — you'll be first to know.
+  </div>
+ 
+  <a href="/" class="back-link">← Back to ciphercomputing.co.uk</a>
+ 
+</div>
+ 
+<p class="cipher-mark">◉ CIPHER · The curriculum built for the AI age</p>
+ 
+</body>
+</html>
